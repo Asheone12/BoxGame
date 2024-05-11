@@ -18,6 +18,6 @@
     <string name="already_first_level">已经到达第1关。</string>
     <string name="label_prev_level">上一关</string>
     <string name="label_next_level">下一关</string>
-    <string name="label_reset_game">重新玩</string>
+    <string name="label_reset_game">重玩</string>
     <string name="label_exit_app">退出</string>
 </resources>

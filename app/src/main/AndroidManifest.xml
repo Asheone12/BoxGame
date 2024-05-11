@@ -28,7 +28,7 @@
             android:label="@string/game_intro_title" />
         <activity android:name=".GameLevelActivity"
             android:theme="@android:style/Theme.Holo"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity android:name=".GameActivity"
             android:theme="@android:style/Theme.Holo"
             android:screenOrientation="portrait"/>

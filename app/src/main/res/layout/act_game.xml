@@ -18,22 +18,26 @@
             android:id="@+id/btn_prv_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_prev_level"/>
+            android:text="@string/label_prev_level"
+            android:textSize="10dp"/>
         <Button
             android:id="@+id/btn_next_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_next_level"/>
+            android:text="@string/label_next_level"
+            android:textSize="10dp"/>
         <Button
             android:id="@+id/btn_reset"
             android:text="@string/label_reset_game"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="10dp"/>
         <Button
             android:id="@+id/btn_exit"
             android:text="@string/label_exit_app"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="10dp"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -3,7 +3,7 @@ package com.muen.boxgame.ui
 import android.content.Intent
 import android.widget.Toast
 import com.muen.boxgame.GameInitialData
-import com.muen.boxgame.GameLevelAdapter
+import com.muen.boxgame.ui.adapter.GameLevelAdapter
 import com.muen.boxgame.PrfsManager
 import com.muen.boxgame.R
 import com.muen.boxgame.databinding.ActivityGameLevelBinding
@@ -35,7 +35,11 @@ class GameLevelActivity : BaseActivity<ActivityGameLevelBinding>() {
         for(level in 1 .. GameInitialData.GameLevels.size){
             mGameLevels_PassedOrNot[level - 1] = PrfsManager.getPassedLevel(this, level)
         }
-        xgqAdapter = GameLevelAdapter(this, R.layout.item_level_gridview, mGameLevels_PassedOrNot)
+        xgqAdapter = GameLevelAdapter(
+            this,
+            R.layout.item_level_gridview,
+            mGameLevels_PassedOrNot
+        )
         viewBinding.gvXuanGuanQia.adapter = xgqAdapter
     }
 

@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.muen.boxgame.GameView
+    <com.muen.boxgame.ui.widget.GameView
         android:id="@+id/game_board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,8 +1,10 @@
-package com.muen.boxgame;
+package com.muen.boxgame.ui.widget;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import com.muen.boxgame.R;
 
 
 public  class GameBitmaps {

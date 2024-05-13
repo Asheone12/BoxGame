@@ -1,4 +1,4 @@
-package com.muen.boxgame;
+package com.muen.boxgame.ui.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,6 +9,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.muen.boxgame.GameData;
+import com.muen.boxgame.GameInitialData;
+import com.muen.boxgame.GameSound;
+import com.muen.boxgame.PrfsManager;
+import com.muen.boxgame.R;
+import com.muen.boxgame.TCell;
 import com.muen.boxgame.ui.GameViewActivity;
 
 import java.io.IOException;
@@ -66,7 +72,7 @@ public class GameView extends View {
     }
 
 
-    private void getManRect(TCell tCell, float rowHeight,float columnWidth ) {
+    private void getManRect(TCell tCell, float rowHeight, float columnWidth ) {
         int left = (int)(mTopLeft_x + tCell.column * columnWidth);
         int top = (int)(mTopLeft_y + tCell.row * rowHeight);
         int right = (int)(left + columnWidth);

@@ -1,4 +1,4 @@
-package com.muen.boxgame;
+package com.muen.boxgame.ui.adapter;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.muen.boxgame.R;
 
 
 public class GameLevelAdapter extends ArrayAdapter<Boolean> {

@@ -2,7 +2,7 @@ package com.muen.boxgame.ui
 
 import android.content.Intent
 import android.os.Bundle
-import com.muen.boxgame.GameBitmaps
+import com.muen.boxgame.ui.widget.GameBitmaps
 import com.muen.boxgame.GameSound
 import com.muen.boxgame.databinding.ActivityGameViewBinding
 import com.muen.boxgame.util.BaseActivity

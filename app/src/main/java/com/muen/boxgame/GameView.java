@@ -9,13 +9,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.muen.boxgame.ui.GameViewActivity;
+
 import java.io.IOException;
 
 
 
 public class GameView extends View {
 
-    private GameActivity mGameActivity;
+    private GameViewActivity mGameActivity;
     private float mColumnWidth;
     private float mRowHeight;
     private GameData mGameData;
@@ -32,10 +34,10 @@ public class GameView extends View {
 
     public GameView(Context context) {
         super(context);
-        init((GameActivity) context);
+        init((GameViewActivity) context);
     }
 
-    private void init(GameActivity context) {
+    private void init(GameViewActivity context) {
         mGameActivity = context;
         mGameLevel = mGameActivity.getGameLevel();
         setFocusable(true);
@@ -51,7 +53,7 @@ public class GameView extends View {
     //为使用布局文件而设置的构造函数
     public GameView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init((GameActivity)context);
+        init((GameViewActivity)context);
     }
 
     @Override

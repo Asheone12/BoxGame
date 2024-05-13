@@ -31,12 +31,8 @@ public class GameView extends View {
     private int mTopLeft_x = 0;
     private int mTopLeft_y = 0;
     private Rect mManRect = new Rect();          //搬运工所在的位置
-//    private Rect mRectBtnNextLevel = new Rect();
-//    private Rect mRectBtnReset = new Rect();
-//    private Rect mRectBtnExit = new Rect();
-//    private Rect mRectBtnPrvLevel = new Rect();
+
     private Rect mRectSoundSwitch = new Rect();
-//    private boolean mSoundAllowed = true;
 
     public GameView(Context context) {
         super(context);
@@ -121,14 +117,12 @@ public class GameView extends View {
         //游戏区域
         drawGameBoard(canvas);
         //音效开关
-        drawSoundSwitch(canvas);
+        //drawSoundSwitch(canvas);
 
         //成功过关
         if (mGameData.isGameOver()) {
             drawDoneLabel(canvas);
         }
-
-        //drawButtons(canvas);
     }
 
 
@@ -170,13 +164,13 @@ public class GameView extends View {
             }
     }
 
-    private void drawSoundSwitch(Canvas canvas) {
+    /*private void drawSoundSwitch(Canvas canvas) {
         mRectSoundSwitch.set(canvas.getWidth() - 2 * (int)mColumnWidth, 0, canvas.getWidth(), 2 * (int)mColumnWidth);
         if (GameSound.isSoundAllowed())
             canvas.drawBitmap(GameBitmaps.mSoundOpenBitmap, null, mRectSoundSwitch, null);
         else
             canvas.drawBitmap(GameBitmaps.mSoundCloseBitmap, null, mRectSoundSwitch, null);
-    }
+    }*/
 
     private void drawDoneLabel(Canvas canvas) {
         int begin_x = mTopLeft_x + 120;
@@ -188,32 +182,6 @@ public class GameView extends View {
         paint.setAlpha(125);
         canvas.drawBitmap(GameBitmaps.mDoneBitmap, null, label_rect, paint);
     }
-
-/*
-    private void drawButtons(Canvas canvas) {
-        final int BOTTOM_MARGIN = canvas.getHeight() / 20;  //离屏幕底端的距离
-        final int LEFT_MARGIN = canvas.getWidth() * 2 / 5 / 5;  //分隔空间占2/5
-        final int RIGHT_MARGIN = LEFT_MARGIN;
-        final int BUTTON_INTERVAL = LEFT_MARGIN;
-        final int BUTTON_WIDTH = canvas.getWidth() * 3 / (5 * 4);    //按钮占3/5
-        int Button_Height = BUTTON_WIDTH * GameBitmaps.mBtnNextBitmap.getHeight() / GameBitmaps.mBtnNextBitmap.getWidth();
-        int button_y = canvas.getHeight() - BOTTOM_MARGIN - Button_Height;
-        int buttion_1_x = LEFT_MARGIN;
-        mRectBtnPrvLevel.set(buttion_1_x, button_y, buttion_1_x + BUTTON_WIDTH, button_y + Button_Height);
-        canvas.drawBitmap(GameBitmaps.mBtnPrevBitmap, null, mRectBtnPrvLevel, null);
-        mRectBtnNextLevel.set(buttion_1_x, button_y, buttion_1_x + BUTTON_WIDTH, button_y + Button_Height);
-        int button_2_x = buttion_1_x + BUTTON_WIDTH + BUTTON_INTERVAL;
-        mRectBtnNextLevel.set(button_2_x, button_y, button_2_x + BUTTON_WIDTH, button_y + Button_Height);
-        canvas.drawBitmap(GameBitmaps.mBtnNextBitmap, null, mRectBtnNextLevel, null);
-        int button_3_x = button_2_x + BUTTON_WIDTH + BUTTON_INTERVAL;
-        mRectBtnReset.set(button_3_x, button_y, button_3_x + BUTTON_WIDTH, button_y + Button_Height);
-        canvas.drawBitmap(GameBitmaps.mBtnResetBitmap, null, mRectBtnReset, null);
-        int button_4_x = button_3_x + BUTTON_WIDTH + BUTTON_INTERVAL;
-        mRectBtnExit.set(button_4_x, button_y, button_4_x + BUTTON_WIDTH, button_y + Button_Height);
-        canvas.drawBitmap(GameBitmaps.mBtnExitBitmap, null, mRectBtnExit, null);
-    }
-*/
-
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -244,32 +212,8 @@ public class GameView extends View {
             }
         }
 
-
-        //pressButton(touch_x, touch_y);
-
         return true;
     }
-/*    private void pressButton(int touch_x, int touch_y) {
-        if (mRectBtnPrvLevel.contains(touch_x, touch_y))
-            gotoPrvLevel();
-
-        if (mRectBtnNextLevel.contains(touch_x, touch_y)){
-            gotoNextLevel();
-        }
-
-        if (mRectBtnReset.contains(touch_x, touch_y)){
-            goToLevel(mGameLevel);
-        }
-
-        if (mRectBtnExit.contains(touch_x, touch_y)){
-            Intent startMain = new Intent(Intent.ACTION_MAIN);
-            startMain.addCategory(Intent.CATEGORY_HOME);
-            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            mGameActivity.startActivity(startMain);
-            System.exit(0);
-        }
-    }*/
-
 
     private boolean touch_blow_to_man(int touch_x, int touch_y) {
         Rect belowRect = new Rect(mManRect.left, mManRect.top + (int)mRowHeight, mManRect.right, mManRect.bottom + (int)mRowHeight);

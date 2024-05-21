@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BoxGame</string>
+    <string name="app_name">推箱子</string>
     <string name="kaishi_youxi">开始游戏</string>
     <string name="youxi_jianjie">游戏简介</string>
     <string name="tuichu_youxi">退出游戏</string>

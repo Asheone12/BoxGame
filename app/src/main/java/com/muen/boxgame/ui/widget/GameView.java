@@ -122,6 +122,7 @@ public class GameView extends View {
         //成功过关
         if (mGameData.isGameOver()) {
             drawDoneLabel(canvas);
+            gotoNextLevel();
         }
     }
 

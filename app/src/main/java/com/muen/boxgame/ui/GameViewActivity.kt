@@ -49,9 +49,4 @@ class GameViewActivity : BaseActivity<ActivityGameViewBinding>() {
         exitProcess(0)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        GameBitmaps.releaseBitmaps() //释放图片占用的内存
-        GameSound.releaseSound() //释放音效占用的内存
-    }
 }

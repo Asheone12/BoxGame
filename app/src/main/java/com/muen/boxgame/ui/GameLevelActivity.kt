@@ -3,10 +3,12 @@ package com.muen.boxgame.ui
 import android.content.Intent
 import android.widget.Toast
 import com.muen.boxgame.GameInitialData
+import com.muen.boxgame.GameSound
 import com.muen.boxgame.ui.adapter.GameLevelAdapter
 import com.muen.boxgame.PrfsManager
 import com.muen.boxgame.R
 import com.muen.boxgame.databinding.ActivityGameLevelBinding
+import com.muen.boxgame.ui.widget.GameBitmaps
 import com.muen.boxgame.util.BaseActivity
 import java.io.IOException
 import kotlin.system.exitProcess
@@ -56,5 +58,11 @@ class GameLevelActivity : BaseActivity<ActivityGameLevelBinding>() {
     override fun onResume() {
         super.onResume()
         xgqAdapter!!.notifyDataSetChanged() //有可能，玩家过了一关
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        GameBitmaps.releaseBitmaps() //释放图片占用的内存
+        GameSound.releaseSound() //释放音效占用的内存
     }
 }
